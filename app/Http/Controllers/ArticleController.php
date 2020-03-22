@@ -66,6 +66,12 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Get article
+        $article = Article::findOrFail($id);
+
+        // Delete Article
+        if($article->delete()) {
+            return new ArticleResource($article);
+        }
     }
 }
