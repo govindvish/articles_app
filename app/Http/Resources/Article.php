@@ -23,6 +23,13 @@ class Article extends JsonResource
             'body' => $this->body
         ];
 
-        
+    }
+
+    // To add other fields in api response
+    public function with($request) {
+        return [
+            'version' => '1.0.0',
+            'author_url' => url('http://www.github.com/govindvish')
+        ];
     }
 }

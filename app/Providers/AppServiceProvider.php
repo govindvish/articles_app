@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+// To unwrap api data from data object
+// use Illuminate\Http\Resources\Json\Resource;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,5 +27,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+        // To unwrap api data from data object
+        // Resource::withoutWrapping();
     }
 }
